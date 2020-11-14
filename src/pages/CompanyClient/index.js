@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { View, ScrollView, ActivityIndicator } from 'react-native'
 import { SearchBar } from 'react-native-elements'
-import ContactListItem from '../../components/ContactListItem'
-import ContactOverlay from '../../components/ContactOverlay'
+import CompanyListItem from '../../components/CompanyListItem'
+import CompanyOverlay from '../../components/CompanyOverlay'
 
-export default function ContactClient() {
+export default function CompanyClient() {
   const [isLoading, setIsLoading] = useState(true)
   const [overlayVisible, setOverlayVisible] = useState(false)
   const [clickedItem, setClickedItem] = useState(null)
@@ -54,7 +54,7 @@ export default function ContactClient() {
               }}
             />
           : filteredData.map((item, index) => (
-            <ContactListItem
+            <CompanyListItem
               key={item.uuid}
               item={item}
               onPress={() => handleClickItem(item)}
@@ -62,7 +62,7 @@ export default function ContactClient() {
           ))
         }
       </ScrollView>
-      <ContactOverlay
+      <CompanyOverlay
         item={clickedItem}
         visible={overlayVisible}
         toggleOverlay={toggleOverlay}
