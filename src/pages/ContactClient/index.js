@@ -30,7 +30,7 @@ export default function ContactClient() {
   }, []);
 
   const updateData = (text) => {
-    setFilteredData(data.filter((item) => item.name.includes(text)));
+    setFilteredData(data.filter((item) => item.name.toLowerCase().includes(text.toLowerCase())));
     setSearch(text);
   };
 
